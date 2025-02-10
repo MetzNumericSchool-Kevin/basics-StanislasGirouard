@@ -40,7 +40,7 @@ console.log(potions[0])
 console.log(potions[potions.length - 1])
 potions.forEach((element) =>
     console.log("Nous avons des potions de " + element)
-);
+)
 // console.log("Potions disponible : \n" + potions[0] + " : " + nbPotionHealth + "\n" + potions[1] + " : " + nbPotionMana + "\n" + potions[2] + " : " + nbPotionEther + "\n")
 TTPotion = prompt("Combien de potions de soin veut-tu ? Tu as " + aventurierBourse + " " + money + " dans ta bourse.\n " + nbPotionHealth + "  potion de soins disponible dans las boutique.")
 cout = TTPotion * healthPotionPrice
@@ -58,4 +58,8 @@ if (TTPotion > nbPotionHealth || cout > aventurierBourse){
     console.log("il te reste " + aventurierBourse + " " + money)
 }
 
+potions.push("Poison")
+potions.forEach((element) =>
+    console.log("Nous avons des potions de " + element)
+)
 
