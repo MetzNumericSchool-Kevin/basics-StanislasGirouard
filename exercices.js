@@ -28,3 +28,6 @@ switch (parseInt(choice)) {
     default:
         console.log("Mh... Désolé aventurier, je ne comprends pas ce que tu souhaites. Refais ton choix !")
 }
+
+TTPotion = prompt("Combiende potions de soin veut-tu ?")
+console.log("Prix de " + TTPotion + " potions de soins : " + (TTPotion * healthPotionPrice) + " " + money + " mon cher aventurier.")
