@@ -63,3 +63,7 @@ potions.forEach((element) =>
     console.log("Nous avons des potions de " + element)
 )
 
+potions.pop("poison")
+potions.forEach((element) =>
+    console.log("Nous avons des potions de " + element)
+)
