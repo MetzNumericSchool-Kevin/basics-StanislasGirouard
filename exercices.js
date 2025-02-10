@@ -1,8 +1,9 @@
-const money = "Pomme"
+const money = "Boule"
 const shopName = "GreenBean"
 let nbPotion = 3
 let healthPotionPrice = 5
 let isOpen = true
+let bourse = 100
 
 const myName = prompt("Comment te nommes-tu, sorcier ? 🧙‍♂️");
 if (isOpen){
@@ -29,5 +30,21 @@ switch (parseInt(choice)) {
         console.log("Mh... Désolé aventurier, je ne comprends pas ce que tu souhaites. Refais ton choix !")
 }
 
-TTPotion = prompt("Combiende potions de soin veut-tu ?")
-console.log("Prix de " + TTPotion + " potions de soins : " + (TTPotion * healthPotionPrice) + " " + money + " mon cher aventurier.")
+TTPotion = prompt("Combien de potions de soin veut-tu ? Tu as " + bourse + " " + money + " dans ta bourse.\n " + nbPotion + "  potion de soins disponible dans las boutique.")
+cout = TTPotion * healthPotionPrice
+if (TTPotion > nbPotion || cout > bourse){
+    if (TTPotion > nbPotion){
+        console.log("Impossible il y a seulement " + nbPotion + " en stock")
+    }
+    if (cout > bourse){
+        console.log("Tu n'as pas assez de " + money)
+    }   
+}else{
+    console.log("Prix de " + TTPotion + " potions de soins : " + cout + " " + money + " mon cher aventurier.")
+    nbPotion = nbPotion - TTPotion
+    bourse = bourse - cout
+    console.log("il te reste " + bourse + " " + money)
+
+}
+
+
