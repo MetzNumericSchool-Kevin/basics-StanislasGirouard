@@ -36,7 +36,12 @@ switch (parseInt(choice)) {
         console.log("Mh... Désolé aventurier, je ne comprends pas ce que tu souhaites. Refais ton choix !")
 }
 
-console.log("Potions disponible : \n" + potions[0] + " : " + nbPotionHealth + "\n" + potions[1] + " : " + nbPotionMana + "\n" + potions[2] + " : " + nbPotionEther + "\n")
+console.log(potions[0])
+console.log(potions[potions.length - 1])
+potions.forEach((element) =>
+    console.log("Nous avons des potions de " + element)
+);
+// console.log("Potions disponible : \n" + potions[0] + " : " + nbPotionHealth + "\n" + potions[1] + " : " + nbPotionMana + "\n" + potions[2] + " : " + nbPotionEther + "\n")
 TTPotion = prompt("Combien de potions de soin veut-tu ? Tu as " + aventurierBourse + " " + money + " dans ta bourse.\n " + nbPotionHealth + "  potion de soins disponible dans las boutique.")
 cout = TTPotion * healthPotionPrice
 if (TTPotion > nbPotionHealth || cout > aventurierBourse){
@@ -51,7 +56,6 @@ if (TTPotion > nbPotionHealth || cout > aventurierBourse){
     nbPotionHealth = nbPotionHealth - TTPotion
     aventurierBourse = aventurierBourse - cout
     console.log("il te reste " + aventurierBourse + " " + money)
-
 }
 
 
