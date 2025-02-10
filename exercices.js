@@ -1,6 +1,22 @@
 const money = "Boule"
 const shopName = "GreenBean"
 let potions = ["Soin", "Mana", "Ether"]
+let healthPotion = {
+    name: "Soin",
+    price: 40,
+    stock: 1
+}
+let manaPotion = {
+    name: "Mana",
+    price: 20,
+    stock: 1
+}
+let etherPotion = {
+    name: "ether",
+    price: 20,
+    stock: 2
+}
+const inventaire = [healthPotion, manaPotion, etherPotion]
 let nbPotionHealth = 1
 let nbPotionMana = 1
 let nbPotionEther = 2
@@ -11,14 +27,17 @@ let isOpen = true
 let myBourse = 0
 let aventurierBourse = 100
 
-let healthPotion = {
-    name: "Soin",
-    price: 40,
-    stock: 1
-}
-console.log(healthPotion)
-console.log(healthPotion.name)
-console.log(healthPotion["price"])
+
+// console.log(healthPotion)
+// console.log(healthPotion.name)
+// console.log(healthPotion["price"])
+
+inventaire.forEach((element) => {
+    Object.keys(element).forEach((key) => {
+        console.log(key + " : " + element[key])
+    })
+    console.log("\n")
+});
 
 const myName = prompt("Comment te nommes-tu, sorcier ? 🧙‍♂️");
 if (isOpen){
