@@ -1,9 +1,15 @@
 const money = "Boule"
 const shopName = "GreenBean"
-let nbPotion = 3
-let healthPotionPrice = 5
+let potions = ["Soin", "Mana", "Ether"]
+let nbPotionHealth = 1
+let nbPotionMana = 1
+let nbPotionEther = 2
+let healthPotionPrice = 40
+let manahPotionPrice = 20
+let etherPotionPrice = 20
 let isOpen = true
-let bourse = 100
+let myBourse = 0
+let aventurierBourse = 100
 
 const myName = prompt("Comment te nommes-tu, sorcier ? 🧙‍♂️");
 if (isOpen){
@@ -24,26 +30,27 @@ switch (parseInt(choice)) {
         console.log(healthPotionPrice + " " + money);
         break;
     case 4:
-        console.log(nbPotion);
+        console.log(nbPotionHealth);
         break;
     default:
         console.log("Mh... Désolé aventurier, je ne comprends pas ce que tu souhaites. Refais ton choix !")
 }
 
-TTPotion = prompt("Combien de potions de soin veut-tu ? Tu as " + bourse + " " + money + " dans ta bourse.\n " + nbPotion + "  potion de soins disponible dans las boutique.")
+console.log("Potions disponible : \n" + potions[0] + " : " + nbPotionHealth + "\n" + potions[1] + " : " + nbPotionMana + "\n" + potions[2] + " : " + nbPotionEther + "\n")
+TTPotion = prompt("Combien de potions de soin veut-tu ? Tu as " + aventurierBourse + " " + money + " dans ta bourse.\n " + nbPotionHealth + "  potion de soins disponible dans las boutique.")
 cout = TTPotion * healthPotionPrice
-if (TTPotion > nbPotion || cout > bourse){
-    if (TTPotion > nbPotion){
-        console.log("Impossible il y a seulement " + nbPotion + " en stock")
+if (TTPotion > nbPotionHealth || cout > aventurierBourse){
+    if (TTPotion > nbPotionHealth){
+        console.log("Impossible il y a seulement " + nbPotionHealth + " en stock")
     }
-    if (cout > bourse){
+    if (cout > aventurierBourse){
         console.log("Tu n'as pas assez de " + money)
     }   
 }else{
     console.log("Prix de " + TTPotion + " potions de soins : " + cout + " " + money + " mon cher aventurier.")
-    nbPotion = nbPotion - TTPotion
-    bourse = bourse - cout
-    console.log("il te reste " + bourse + " " + money)
+    nbPotionHealth = nbPotionHealth - TTPotion
+    aventurierBourse = aventurierBourse - cout
+    console.log("il te reste " + aventurierBourse + " " + money)
 
 }
 
