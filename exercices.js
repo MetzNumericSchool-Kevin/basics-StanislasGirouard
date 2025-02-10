@@ -11,6 +11,15 @@ let isOpen = true
 let myBourse = 0
 let aventurierBourse = 100
 
+let healthPotion = {
+    name: "Soin",
+    price: 40,
+    stock: 1
+}
+console.log(healthPotion)
+console.log(healthPotion.name)
+console.log(healthPotion["price"])
+
 const myName = prompt("Comment te nommes-tu, sorcier ? 🧙‍♂️");
 if (isOpen){
     console.log("Bienvenue dans la boutique " + shopName + " ! 🎉");
